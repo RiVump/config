@@ -65,20 +65,14 @@ class Config
             $path = [$path];
         }
 
-        $normalizedDocumentRoot = str_replace('\\', '/', dirname(__FILE__, 4));
-
         foreach ($path as $file) {
             $config = require $file;
             if (!$config || !is_array($config)) {
                 continue;
             }
 
-            $normalizedPath = str_replace('\\', '/', $file);
-            $namespace = str_replace(
-                [$normalizedDocumentRoot.'/ilab/config/', '.php', '/'],
-                ['', '', '.'],
-                $normalizedPath
-            );
+            $explodedFilePath = explode('/', $file);
+            $namespace = str_replace('.php', '', array_pop($explodedFilePath));
 
             foreach ($config as $key => $value) {
                 static::set($namespace.'.'.$key, $value);
