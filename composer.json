@@ -1,0 +1,13 @@
+{
+    "name": "rivump/config",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vladislav Borisenko",
+            "email": "invinciblewest@gmail.com"
+        }
+    ],
+    "require": {}
+}
