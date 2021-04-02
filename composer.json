@@ -9,5 +9,12 @@
             "email": "invinciblewest@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "RiVump\\Util\\": "src"
+        }
+    },
+    "require": {
+        "php": "^7.1"
+    }
 }
